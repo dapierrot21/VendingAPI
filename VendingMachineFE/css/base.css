@@ -1,0 +1,39 @@
+.sq {
+    height: 175px;
+    width: 175px;
+    margin:15px;
+    position: relative;
+    border-style: solid;
+}
+.content {
+    position: absolute;
+    height:90%;
+    width:80%;
+    padding:5%;
+    margin:0px 15px 30px 15px;
+    text-align: center;
+}
+.form-horizontal {
+    height: auto;
+    width: 250px;
+    margin: 8%;
+    padding: 0% 4%;
+    position: relative;
+}
+.form-group {
+    display: inline-block;
+    text-align: center;
+}
+hr {
+    display: block;
+    height: 1px;
+    border:0;
+    border-bottom: 2px solid;
+    margin: 1em 0;
+    padding: 0;
+}
+.btn-default {
+    display: inline-block;
+    text-align: center;
+    width: 65px;
+}

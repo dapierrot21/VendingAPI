@@ -1,0 +1,28 @@
+USE VendingMachine
+GO
+
+IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.ROUTINES
+	WHERE ROUTINE_NAME = 'GetAllItems')
+	DROP PROCEDURE GetAllItems
+GO
+
+IF EXISTS(SELECT * FROM INFORMATION_SCHEMA.ROUTINES
+	WHERE ROUTINE_NAME = 'GetItemById')
+	DROP PROCEDURE GetItemById
+GO
+
+CREATE PROCEDURE GetAllItems
+AS
+	SELECT id, [name], price, quantity
+	FROM Item
+GO
+
+CREATE PROCEDURE GetItemById(
+	@id INT
+)
+AS
+	SELECT id, [name], price, quantity
+	FROM Item
+	WHERE id = @id
+GO
+
