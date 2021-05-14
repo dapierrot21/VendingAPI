@@ -1,17 +1,16 @@
-USE MASTER;
+USE VendingMachine;
 GO
 
 CREATE LOGIN VendingMachineApp WITH PASSWORD='testing123'
 GO
 
-USE VendingMachine;
-GO
-
 CREATE USER VendingMachineApp FOR LOGIN VendingMachineApp
 GO
 
-GRANT EXECUTE ON GetAllItems TO VendingMachineApp
-GRANT EXECUTE ON GetItemById TO VendingMachineApp
+GRANT EXECUTE ON dbo.GetAllItems TO VendingMachineApp
+GRANT EXECUTE ON dbo.GetItemById TO VendingMachineApp
+GRANT EXECUTE ON dbo.ItemUpdate TO VendingMachineApp
+GO
 
 GRANT SELECT ON Item TO VendingMachineApp
 GRANT INSERT ON Item TO VendingMachineApp

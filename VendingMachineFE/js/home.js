@@ -82,7 +82,7 @@ function loadItems() {
     
     $.ajax ({
         type: 'GET',
-        url: 'https://tsg-vending.herokuapp.com/items',
+        url: 'https://localhost:44318/items/',
         success: function (data, status) {
             $.each(data, function (index, item) {
                 var id = item.id;
@@ -115,7 +115,7 @@ function makePurchase(money, item) {
 
     $.ajax ({
         type: 'POST',
-        url: 'https://tsg-vending.herokuapp.com/money/' + money + '/item/' + item,
+        url: 'https://localhost:44318/money/' + money + '/item/' + item,
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
