@@ -10,7 +10,7 @@ namespace VendingMachineAPI
     {
         private static string _connectionString;
         private static string _repositoryType;
-        HttpResponse response;
+        
 
         public static string GetConnectionString()
         {
@@ -29,11 +29,6 @@ namespace VendingMachineAPI
 
 			return _repositoryType;
 		}
-
-        public void Error(string messages)
-        {
-             response.Write(messages);
-        }
 
 
 

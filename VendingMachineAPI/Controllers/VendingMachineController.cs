@@ -55,12 +55,7 @@ namespace VendingMachineAPI.Controllers
 			}
 			else if (money < item.price)
             {
-				var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-				{
-					Content = new StringContent("Please enter more money."),
-					StatusCode = HttpStatusCode.NotFound
-				};
-				throw new HttpResponseException(response);
+				return new HttpError("Please enter more money.", Request);
 			}
 
 
