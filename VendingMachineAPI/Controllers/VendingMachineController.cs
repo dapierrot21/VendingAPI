@@ -33,6 +33,16 @@ namespace VendingMachineAPI.Controllers
 
 			Item item = repo.GetItemById(id);
 
+			if (item == null)
+            {
+				return new HttpError("Item is not found", Request);
+            }
+
+			if (item.quantity < 0)
+            {
+				return new HttpError("Item is out of stock. Please try again.", Request);
+            }
+
 			decimal money = decimal.Parse(amount);
 
 			ReturnedChange change = new ReturnedChange();
